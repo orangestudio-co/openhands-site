@@ -34,7 +34,10 @@ $("[data-modal='open']").on("click", function () {
   modalItem.icon.attr("src", currentContent.icon);
   modalItem.title.text(currentContent.title);
   modalItem.description.text(currentContent.description);
-  modalItem.sdkUrl.attr("href", currentContent.sdk ? currentContent.sdk : "#");
+  modalItem.sdkUrl.attr(
+    "href",
+    currentContent.sdk ? currentContent.sdk : "https://app.all-hands.dev/login",
+  );
   modalItem.cloudUrl.attr(
     "href",
     currentContent.cloud ? currentContent.cloud : "#",
