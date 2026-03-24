@@ -14,6 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const modalItem = Object.fromEntries(
+  ["icon", "title", "description", "cloudUrl", "sdkUrl"].map((name) => [
+    name,
+    $(`[data-modal-content="${name}"]`),
+  ]),
+);
+
 $("[data-modal='open']").on("click", function () {
   let current = $(this).parent();
   let currentContent = {
@@ -23,5 +30,19 @@ $("[data-modal='open']").on("click", function () {
     sdk: current.find("[data-sdk-url]").attr("data-sdk-url"),
     cloud: current.find("[data-cloud-url]").attr("data-cloud-url"),
   };
-  
+
+  modalItem.icon.attr("src", currentContent.icon);
+  modalItem.title.text(currentContent.title);
+  modalItem.description.text(currentContent.description);
+  modalItem.sdkUrl.attr("href", currentContent.sdk ? currentContent.sdk : "#");
+  modalItem.cloudUrl.attr(
+    "href",
+    currentContent.cloud ? currentContent.cloud : "#",
+  );
+
+  $("[data-modal='modal']")[0].showModal();
+});
+
+$("[data-modal='close']").on("click", function () {
+  $("[data-modal='modal']")[0].close();
 });
