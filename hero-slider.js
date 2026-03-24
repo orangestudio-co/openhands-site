@@ -34,10 +34,15 @@ $("[data-modal='open']").on("click", function () {
   modalItem.icon.attr("src", currentContent.icon);
   modalItem.title.text(currentContent.title);
   modalItem.description.text(currentContent.description);
-  modalItem.sdkUrl.attr("href", currentContent.sdk ? currentContent.sdk : "#");
+  modalItem.sdkUrl.attr(
+    "href",
+    currentContent.sdk ? currentContent.sdk : "https://docs.openhands.dev/sdk",
+  );
   modalItem.cloudUrl.attr(
     "href",
-    currentContent.cloud ? currentContent.cloud : "#",
+    currentContent.cloud
+      ? currentContent.cloud
+      : "https://app.all-hands.dev/login",
   );
 
   $("[data-modal='modal']")[0].showModal();
