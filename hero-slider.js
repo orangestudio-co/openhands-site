@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     focus: 0,
     omitEnd: true,
     wheel: true,
+    drag: "free",
   });
   splide.mount();
 
