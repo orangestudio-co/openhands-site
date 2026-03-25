@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  $("[data-slider='final-card']").appendTo("[data-slider='list']");
+
   var splide = new Splide(".splide", {
     arrows: false,
     pagination: false,
