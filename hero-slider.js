@@ -37,7 +37,7 @@ $("[data-modal='open']").on("click", function () {
     cloud: current.find("[data-cloud-url]").attr("data-cloud-url"),
   };
 
-  activeModal.attr("data-active-usecase", modalItem.title);
+  activeModal.attr("data-active-usecase", currentContent.title);
 
   modalItem.icon.attr("src", currentContent.icon);
   modalItem.title.text(currentContent.title);
