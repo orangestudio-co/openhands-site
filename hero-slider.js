@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     gap: "1.5rem",
     focus: 0,
     omitEnd: true,
+    wheel: true,
+    drag: "free",
   });
   splide.mount();
 
