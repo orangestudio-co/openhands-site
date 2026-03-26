@@ -23,6 +23,8 @@ const modalItem = Object.fromEntries(
   ]),
 );
 
+const activeModal = $("[data-active-modal]");
+
 $("[data-modal='open']").on("click", function () {
   let current = $(this).parent();
   let currentContent = {
@@ -32,6 +34,8 @@ $("[data-modal='open']").on("click", function () {
     sdk: current.find("[data-sdk-url]").attr("data-sdk-url"),
     cloud: current.find("[data-cloud-url]").attr("data-cloud-url"),
   };
+
+  activeModal.attr("data-active-modal", modalItem.title);
 
   modalItem.icon.attr("src", currentContent.icon);
   modalItem.title.text(currentContent.title);
